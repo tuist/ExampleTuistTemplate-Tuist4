@@ -1,7 +1,7 @@
 import ProjectDescription 
 
 let target = Target(name: "{{ name }}",
-                    platform: .macOS,
+                    destinations: [.mac],
                     product: .commandLineTool,
                     bundleId: "tuist.io.{{ name }}",
                     infoPlist: .default,
