@@ -1,6 +1,6 @@
 import ProjectDescription 
 
-let target = Target(name: "{{ name }}",
+let target: Target = .target(name: "{{ name }}",
                     destinations: [.mac],
                     product: .commandLineTool,
                     bundleId: "tuist.io.{{ name }}",
@@ -12,7 +12,7 @@ let target = Target(name: "{{ name }}",
                     ]
 )
 
-let scheme = Scheme(name: "{{ name }}", shared: true, buildAction: .buildAction(targets: ["{{ name }}"]), runAction: .runAction(configuration: .debug, executable: "{{ name }}"))
+let scheme: Scheme = .scheme(name: "{{ name }}", shared: true, buildAction: .buildAction(targets: ["{{ name }}"]), runAction: .runAction(configuration: .debug, executable: "{{ name }}"))
 
 let prj = Project(name: "{{ name }}",
                   organizationName: "Tuist.io",
